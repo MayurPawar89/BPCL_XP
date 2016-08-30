@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.txtAHL_TIN = new System.Windows.Forms.TextBox();
             this.pnlSearchInformation = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
@@ -60,6 +60,9 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.pnlToolstrip = new System.Windows.Forms.Panel();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.btnSearch = new System.Windows.Forms.ToolStripButton();
+            this.btnClearSearchFields = new System.Windows.Forms.ToolStripButton();
             this.label16 = new System.Windows.Forms.Label();
             this.dgvResult = new System.Windows.Forms.DataGridView();
             this.pnlMain = new System.Windows.Forms.Panel();
@@ -72,26 +75,23 @@
             this.pnlSearchTIN_ID = new System.Windows.Forms.Panel();
             this.label17 = new System.Windows.Forms.Label();
             this.txtNPR_TIN = new System.Windows.Forms.TextBox();
-            this.btnSearch = new System.Windows.Forms.ToolStripButton();
-            this.btnClearSearchFields = new System.Windows.Forms.ToolStripButton();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.pnlSearchInformation.SuspendLayout();
             this.pnlSearchRadio.SuspendLayout();
             this.pnlSearchCombo.SuspendLayout();
             this.pnlToolstrip.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResult)).BeginInit();
             this.pnlMain.SuspendLayout();
             this.pnlDataGrid.SuspendLayout();
             this.pnlTop.SuspendLayout();
             this.pnlSearchTIN_ID.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtAHL_TIN
             // 
             this.txtAHL_TIN.Location = new System.Drawing.Point(164, 4);
             this.txtAHL_TIN.Name = "txtAHL_TIN";
-            this.txtAHL_TIN.Size = new System.Drawing.Size(260, 20);
+            this.txtAHL_TIN.Size = new System.Drawing.Size(260, 22);
             this.txtAHL_TIN.TabIndex = 19;
             // 
             // pnlSearchInformation
@@ -115,7 +115,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(61, 8);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(78, 13);
+            this.label4.Size = new System.Drawing.Size(99, 14);
             this.label4.TabIndex = 3;
             this.label4.Text = "Name Search :";
             // 
@@ -123,7 +123,7 @@
             // 
             this.txtNameSearch.Location = new System.Drawing.Point(164, 4);
             this.txtNameSearch.Name = "txtNameSearch";
-            this.txtNameSearch.Size = new System.Drawing.Size(260, 20);
+            this.txtNameSearch.Size = new System.Drawing.Size(260, 22);
             this.txtNameSearch.TabIndex = 4;
             // 
             // label5
@@ -131,7 +131,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(13, 36);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(114, 13);
+            this.label5.Size = new System.Drawing.Size(147, 14);
             this.label5.TabIndex = 12;
             this.label5.Text = "Mother Name Search :";
             // 
@@ -139,7 +139,7 @@
             // 
             this.txtMotherNameSearch.Location = new System.Drawing.Point(164, 32);
             this.txtMotherNameSearch.Name = "txtMotherNameSearch";
-            this.txtMotherNameSearch.Size = new System.Drawing.Size(260, 20);
+            this.txtMotherNameSearch.Size = new System.Drawing.Size(260, 22);
             this.txtMotherNameSearch.TabIndex = 7;
             // 
             // label6
@@ -147,7 +147,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(16, 64);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(111, 13);
+            this.label6.Size = new System.Drawing.Size(144, 14);
             this.label6.TabIndex = 14;
             this.label6.Text = "Father Name Search :";
             // 
@@ -155,21 +155,21 @@
             // 
             this.txtNameSearch_P3.Location = new System.Drawing.Point(696, 4);
             this.txtNameSearch_P3.Name = "txtNameSearch_P3";
-            this.txtNameSearch_P3.Size = new System.Drawing.Size(260, 20);
+            this.txtNameSearch_P3.Size = new System.Drawing.Size(260, 22);
             this.txtNameSearch_P3.TabIndex = 6;
             // 
             // txtFatherNameSearch
             // 
             this.txtFatherNameSearch.Location = new System.Drawing.Point(164, 60);
             this.txtFatherNameSearch.Name = "txtFatherNameSearch";
-            this.txtFatherNameSearch.Size = new System.Drawing.Size(260, 20);
+            this.txtFatherNameSearch.Size = new System.Drawing.Size(260, 22);
             this.txtFatherNameSearch.TabIndex = 8;
             // 
             // txtNameSearch_P2
             // 
             this.txtNameSearch_P2.Location = new System.Drawing.Point(430, 4);
             this.txtNameSearch_P2.Name = "txtNameSearch_P2";
-            this.txtNameSearch_P2.Size = new System.Drawing.Size(260, 20);
+            this.txtNameSearch_P2.Size = new System.Drawing.Size(260, 22);
             this.txtNameSearch_P2.TabIndex = 5;
             // 
             // pnlSearchRadio
@@ -188,19 +188,20 @@
             this.rdInformation.AutoSize = true;
             this.rdInformation.Location = new System.Drawing.Point(166, 5);
             this.rdInformation.Name = "rdInformation";
-            this.rdInformation.Size = new System.Drawing.Size(77, 17);
+            this.rdInformation.Size = new System.Drawing.Size(98, 18);
             this.rdInformation.TabIndex = 24;
             this.rdInformation.TabStop = true;
             this.rdInformation.Tag = "0";
             this.rdInformation.Text = "Information";
             this.rdInformation.UseVisualStyleBackColor = true;
+            this.rdInformation.CheckedChanged += new System.EventHandler(this.rdInformation_CheckedChanged);
             // 
             // label18
             // 
             this.label18.AutoSize = true;
             this.label18.Location = new System.Drawing.Point(101, 7);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(47, 13);
+            this.label18.Size = new System.Drawing.Size(59, 14);
             this.label18.TabIndex = 23;
             this.label18.Text = "Search :";
             // 
@@ -209,12 +210,13 @@
             this.rdTINID.AutoSize = true;
             this.rdTINID.Location = new System.Drawing.Point(315, 5);
             this.rdTINID.Name = "rdTINID";
-            this.rdTINID.Size = new System.Drawing.Size(64, 17);
+            this.rdTINID.Size = new System.Drawing.Size(74, 18);
             this.rdTINID.TabIndex = 25;
             this.rdTINID.TabStop = true;
             this.rdTINID.Tag = "1";
             this.rdTINID.Text = "TIN ID\'s";
             this.rdTINID.UseVisualStyleBackColor = true;
+            this.rdTINID.CheckedChanged += new System.EventHandler(this.rdTINID_CheckedChanged);
             // 
             // pnlSearchCombo
             // 
@@ -237,7 +239,7 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(104, 12);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(46, 13);
+            this.label7.Size = new System.Drawing.Size(57, 14);
             this.label7.TabIndex = 18;
             this.label7.Text = "Taluka :";
             // 
@@ -249,15 +251,16 @@
             "All"});
             this.cmbTown.Location = new System.Drawing.Point(695, 36);
             this.cmbTown.Name = "cmbTown";
-            this.cmbTown.Size = new System.Drawing.Size(260, 21);
+            this.cmbTown.Size = new System.Drawing.Size(260, 22);
             this.cmbTown.TabIndex = 3;
+            this.cmbTown.Click += new System.EventHandler(this.cmbTown_SelectedIndexChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(99, 40);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(48, 13);
+            this.label3.Size = new System.Drawing.Size(62, 14);
             this.label3.TabIndex = 2;
             this.label3.Text = "Gender :";
             // 
@@ -266,7 +269,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(641, 40);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(40, 13);
+            this.label2.Size = new System.Drawing.Size(50, 14);
             this.label2.TabIndex = 1;
             this.label2.Text = "Town :";
             // 
@@ -278,15 +281,16 @@
             "All"});
             this.cmbTaluka.Location = new System.Drawing.Point(163, 8);
             this.cmbTaluka.Name = "cmbTaluka";
-            this.cmbTaluka.Size = new System.Drawing.Size(260, 21);
+            this.cmbTaluka.Size = new System.Drawing.Size(260, 22);
             this.cmbTaluka.TabIndex = 0;
+            this.cmbTaluka.Click += new System.EventHandler(this.cmbTaluka_SelectedIndexChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(569, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 13);
+            this.label1.Size = new System.Drawing.Size(122, 14);
             this.label1.TabIndex = 0;
             this.label1.Text = "Grampanchyayat :";
             // 
@@ -298,8 +302,9 @@
             "All"});
             this.cmbGrampanchayat.Location = new System.Drawing.Point(695, 8);
             this.cmbGrampanchayat.Name = "cmbGrampanchayat";
-            this.cmbGrampanchayat.Size = new System.Drawing.Size(260, 21);
+            this.cmbGrampanchayat.Size = new System.Drawing.Size(260, 22);
             this.cmbGrampanchayat.TabIndex = 1;
+            this.cmbGrampanchayat.Click += new System.EventHandler(this.cmbGrampanchayat_SelectedIndexChanged);
             // 
             // cmbGender
             // 
@@ -313,7 +318,7 @@
             "TRANSGENDER"});
             this.cmbGender.Location = new System.Drawing.Point(163, 36);
             this.cmbGender.Name = "cmbGender";
-            this.cmbGender.Size = new System.Drawing.Size(260, 21);
+            this.cmbGender.Size = new System.Drawing.Size(260, 22);
             this.cmbGender.TabIndex = 2;
             // 
             // label14
@@ -362,12 +367,50 @@
             this.pnlToolstrip.Size = new System.Drawing.Size(990, 69);
             this.pnlToolstrip.TabIndex = 17;
             // 
+            // toolStrip1
+            // 
+            this.toolStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(216)))), ((int)(((byte)(254)))));
+            this.toolStrip1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("toolStrip1.BackgroundImage")));
+            this.toolStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(48, 48);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnSearch,
+            this.btnClearSearchFields});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(990, 69);
+            this.toolStrip1.TabIndex = 0;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
+            this.btnSearch.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(57, 66);
+            this.btnSearch.Text = "&Search";
+            this.btnSearch.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // btnClearSearchFields
+            // 
+            this.btnClearSearchFields.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClearSearchFields.Image = ((System.Drawing.Image)(resources.GetObject("btnClearSearchFields.Image")));
+            this.btnClearSearchFields.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnClearSearchFields.Name = "btnClearSearchFields";
+            this.btnClearSearchFields.Size = new System.Drawing.Size(52, 66);
+            this.btnClearSearchFields.Text = "&Clear";
+            this.btnClearSearchFields.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnClearSearchFields.Click += new System.EventHandler(this.btnClearSearchFields_Click);
+            // 
             // label16
             // 
             this.label16.AutoSize = true;
             this.label16.Location = new System.Drawing.Point(72, 8);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(72, 13);
+            this.label16.Size = new System.Drawing.Size(87, 14);
             this.label16.TabIndex = 20;
             this.label16.Text = "AHL_TIN ID :";
             // 
@@ -383,7 +426,7 @@
             this.dgvResult.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(67)))), ((int)(((byte)(120)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Verdana", 9F);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -392,7 +435,7 @@
             this.dgvResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(241)))), ((int)(((byte)(253)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 9F);
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(83)))), ((int)(((byte)(150)))));
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(224)))), ((int)(((byte)(156)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
@@ -502,7 +545,7 @@
             this.label17.AutoSize = true;
             this.label17.Location = new System.Drawing.Point(603, 9);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(74, 13);
+            this.label17.Size = new System.Drawing.Size(88, 14);
             this.label17.TabIndex = 22;
             this.label17.Text = "NPR_TIN ID :";
             this.label17.Visible = false;
@@ -511,56 +554,25 @@
             // 
             this.txtNPR_TIN.Location = new System.Drawing.Point(695, 5);
             this.txtNPR_TIN.Name = "txtNPR_TIN";
-            this.txtNPR_TIN.Size = new System.Drawing.Size(260, 20);
+            this.txtNPR_TIN.Size = new System.Drawing.Size(260, 22);
             this.txtNPR_TIN.TabIndex = 21;
             this.txtNPR_TIN.Visible = false;
             // 
-            // btnSearch
-            // 
-            this.btnSearch.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
-            this.btnSearch.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(57, 66);
-            this.btnSearch.Text = "&Search";
-            this.btnSearch.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            // 
-            // btnClearSearchFields
-            // 
-            this.btnClearSearchFields.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClearSearchFields.Image = ((System.Drawing.Image)(resources.GetObject("btnClearSearchFields.Image")));
-            this.btnClearSearchFields.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnClearSearchFields.Name = "btnClearSearchFields";
-            this.btnClearSearchFields.Size = new System.Drawing.Size(52, 66);
-            this.btnClearSearchFields.Text = "&Clear";
-            this.btnClearSearchFields.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(216)))), ((int)(((byte)(254)))));
-            this.toolStrip1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("toolStrip1.BackgroundImage")));
-            this.toolStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(48, 48);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnSearch,
-            this.btnClearSearchFields});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(990, 69);
-            this.toolStrip1.TabIndex = 0;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(216)))), ((int)(((byte)(254)))));
             this.ClientSize = new System.Drawing.Size(990, 613);
             this.Controls.Add(this.pnlMain);
             this.Controls.Add(this.pnlToolstrip);
+            this.Font = new System.Drawing.Font("Verdana", 9F);
+            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(83)))), ((int)(((byte)(150)))));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "BPCL Search";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.pnlSearchInformation.ResumeLayout(false);
             this.pnlSearchInformation.PerformLayout();
             this.pnlSearchRadio.ResumeLayout(false);
@@ -569,14 +581,14 @@
             this.pnlSearchCombo.PerformLayout();
             this.pnlToolstrip.ResumeLayout(false);
             this.pnlToolstrip.PerformLayout();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResult)).EndInit();
             this.pnlMain.ResumeLayout(false);
             this.pnlDataGrid.ResumeLayout(false);
             this.pnlTop.ResumeLayout(false);
             this.pnlSearchTIN_ID.ResumeLayout(false);
             this.pnlSearchTIN_ID.PerformLayout();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
